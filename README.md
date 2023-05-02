@@ -19,6 +19,8 @@ Actual game:
     Check if game is over
         - User gets a 2048 tile (Win)
         - no moves possible (Lost)
+            - no vert moves
+            - no h moves
     UI
         - initialize UI
         - UI Update
