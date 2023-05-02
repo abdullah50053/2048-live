@@ -164,7 +164,38 @@ class Game(tk.Frame):
                 new_matrix[i][j] = self.matrix[j][i]
         self.matrix = new_matrix
 
+    def add_new_tile(self):
+        row = random.randint(0,3)
+        col = random.randint(0,3)
 
+        while(self.matrix[row][col] != 0):
+            row = random.randint(0,3)
+            col = random.randint(0,3)
+        
+        self.matrix[row][col] = random.choice([2, 4])
+
+    def update_GUI(self):
+        for i in range(4):
+            for j in range(4):
+                cell_value = self.matrix[i][j]
+                if cell_value == 0:
+                    self.cells[i][j]["frame"].configure(bg=self.Color_EmptyCell)
+                    self.cells[i][j]["number"].configure(
+                        bg=self.Color_EmptyCell,
+                        text=""
+                    )
+                else:
+                    self.cells[i][j]["frame"].configure(
+                        bg=self.Color_Cells[cell_value]
+                        )
+                    self.cells[i][j]["number"].configure(
+                        bg=self.Color_Cells[cell_value],
+                        fg=self.Color_CellNumber[cell_value],
+                        font=self.Fonts_CellNumber[cell_value],
+                        text=str(cell_value)
+                    )
+        self.score_label.configure(text=self.score)
+        self.update_idletasks()
 
 def main():
     print()
