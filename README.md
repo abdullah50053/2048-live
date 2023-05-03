@@ -1,5 +1,7 @@
 # 2048 Game
 
+[Live stream](https://www.youtube.com/live/vMjczTeGFe4?feature=share)
+
 Game UI (Tkinter)
 - title/score
 - grid
