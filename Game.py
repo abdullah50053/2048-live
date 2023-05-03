@@ -190,7 +190,7 @@ class Game(tk.Frame):
         self.score_label.configure(text=self.score)
         self.update_idletasks()
 
-    def left(self, event):
+    def left(self):
         self.stack()
         self.combine()
         self.stack()
@@ -198,7 +198,7 @@ class Game(tk.Frame):
         self.update_GUI()
         self.game_over()
 
-    def right(self, event):
+    def right(self):
         self.reverse()
         self.stack()
         self.combine()
@@ -208,7 +208,7 @@ class Game(tk.Frame):
         self.update_GUI()
         self.game_over()
 
-    def up(self, event):
+    def up(self):
         self.transpose()
         self.stack()
         self.combine()
@@ -218,7 +218,7 @@ class Game(tk.Frame):
         self.update_GUI()
         self.game_over()
 
-    def down(self, event):
+    def down(self):
         self.transpose()
         self.reverse()
         self.stack()
